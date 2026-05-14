@@ -1,16 +1,14 @@
 # Ciphy - Basic Encryption & Decryption Tool
 
-Ciphy is a modern internship-level web app that demonstrates classical cryptography concepts using Caesar Cipher logic and ROT13 mode.
+Ciphy is a modern web app that demonstrates classical cryptography concepts using Caesar Cipher logic and ROT13 mode.
 
 ## Project Overview
 
-This project helps learners understand:
+This project helped me  understand:
 - Encryption and decryption fundamentals
 - Reversible transformation logic
 - Character shifting techniques
 - Frontend interactivity with real-time updates
-
-It is intentionally lightweight and beginner-friendly while still polished for portfolio use.
 
 ## Features
 
@@ -59,45 +57,6 @@ basic-encryption-decryption/
 |   `-- screenshots/
 `-- favicon/
 ```
-
-## Screenshots
-
-Add project screenshots in:
-- `assets/screenshots/`
-
-Suggested screenshots:
-- Main desktop UI
-- Mobile responsive UI
-- Caesar encryption example
-- ROT13 mode example
-
-## Installation
-
-1. Clone or download this repository.
-2. Navigate to the project folder.
-3. Ensure these files exist:
-   - `index.html`
-   - `style.css`
-   - `script.js`
-
-## Run Locally
-
-1. Open `index.html` in your browser.
-2. Start typing in the Original Text area.
-3. Adjust shift key or switch cipher mode.
-4. Copy outputs or clear all as needed.
-
-No backend, build tool, or dependencies required.
-
-## Future Improvements
-
-- Add Vigenere Cipher mode
-- Add text file input/output support
-- Add downloadable encrypted/decrypted results
-- Add light/dark theme toggle
-- Add unit tests for cipher functions
-- Add multilingual character handling strategy
-
 ---
 
-Built for cybersecurity fundamentals demonstration, internship submission, and GitHub/LinkedIn portfolio showcase.
+Built for cybersecurity fundamentals demonstration and internship submission.
