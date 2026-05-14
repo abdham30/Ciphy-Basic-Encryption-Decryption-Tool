@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ciphy - Basic Encryption & Decryption Tool using Caesar Cipher and ROT13." />
+  <title>Ciphy | Basic Encryption & Decryption Tool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Manrope:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="background-glow" aria-hidden="true"></div>
+
+  <header class="hero container">
+    <p class="hero-badge">Classical Cipher Lab</p>
+    <h1>Ciphy</h1>
+    <h2>Basic Encryption & Decryption Tool</h2>
+    <p class="hero-subtitle">
+      Explore classical cryptography with a modern, interactive web app.
+    </p>
+  </header>
+
+  <main class="container app-layout">
+    <section class="card control-panel" aria-label="Cipher controls">
+      <div class="control-header">
+        <h2>Cipher Controls</h2>
+        <div class="tooltip-wrap">
+          <button class="info-btn" id="cipherInfoBtn" type="button" aria-describedby="cipherTooltip"
+            aria-label="Cipher information">i</button>
+          <div class="tooltip" id="cipherTooltip" role="tooltip">
+            <strong>Caesar Cipher:</strong> shifts each letter by a key (1-25).<br />
+            <strong>ROT13:</strong> fixed shift of 13 (letters only).
+          </div>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label for="cipherType">Cipher Type</label>
+        <select id="cipherType" aria-label="Select cipher type">
+          <option value="caesar">Caesar Cipher</option>
+          <option value="rot13">ROT13</option>
+        </select>
+      </div>
+
+      <div class="field-group" id="shiftGroup">
+        <label for="shiftRange">Shift Key <span id="shiftValueLabel">3</span></label>
+        <div class="shift-controls">
+          <input id="shiftRange" type="range" min="1" max="25" value="3" aria-label="Shift value slider" />
+          <input id="shiftNumber" type="number" min="1" max="25" value="3" aria-label="Shift value number input" />
+        </div>
+      </div>
+
+      <div class="strength-meter" aria-live="polite">
+        <div class="strength-meta">
+          <span>Shift Strength</span>
+          <span id="strengthLabel">Moderate</span>
+        </div>
+        <div class="strength-track">
+          <div id="strengthBar" class="strength-fill"></div>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="resetBtn" class="secondary-btn" type="button">Clear All</button>
+      </div>
+    </section>
+
+    <section class="card panel" aria-label="Encryption panel">
+      <h2>Encryption Panel</h2>
+
+      <div class="field-group">
+        <label for="plainInput">Original Text</label>
+        <textarea id="plainInput" rows="6" placeholder="Type or paste text to encrypt..."></textarea>
+      </div>
+
+      <div class="field-group">
+        <label for="encryptedOutput">Encrypted Output</label>
+        <textarea id="encryptedOutput" rows="6" readonly aria-live="polite"></textarea>
+      </div>
+
+      <div class="button-row">
+        <button id="copyEncryptedBtn" type="button">Copy Encrypted</button>
+      </div>
+
+      <div class="visualizer" id="encryptVisualizer" aria-hidden="true">
+        <span>Scanning</span>
+        <span>Shifting</span>
+        <span>Ready</span>
+      </div>
+    </section>
+
+    <section class="card panel" aria-label="Decryption panel">
+      <h2>Decryption Panel</h2>
+
+      <div class="field-group">
+        <label for="encryptedInput">Encrypted Text</label>
+        <textarea id="encryptedInput" rows="6" placeholder="Paste encrypted text here to decrypt..."></textarea>
+      </div>
+
+      <div class="button-row compact">
+        <button id="useOutputBtn" class="secondary-btn" type="button">Use Encrypted Output</button>
+      </div>
+
+      <div class="field-group">
+        <label for="decryptedOutput">Decrypted Output</label>
+        <textarea id="decryptedOutput" rows="6" readonly aria-live="polite"></textarea>
+      </div>
+
+      <div class="button-row">
+        <button id="copyDecryptedBtn" type="button">Copy Decrypted</button>
+      </div>
+    </section>
+
+    <section class="card transform-card" aria-label="Character transformation preview">
+      <h2>Character Transformation Preview</h2>
+      <p class="muted">Preview of how letters map with your current cipher settings.</p>
+      <div id="transformPreview" class="transform-grid"></div>
+    </section>
+
+    <section class="card explanation" aria-label="Cipher explanation">
+      <h2>How This Works</h2>
+      <p>
+        The Caesar Cipher shifts each alphabet letter by a fixed number. For example, with shift <code>3</code>,
+        <code>A -&gt; D</code> and <code>x -&gt; a</code>.
+        Decryption reverses the shift, restoring the original message.
+      </p>
+      <p>
+        ROT13 is a special Caesar Cipher with a fixed shift of <code>13</code>, which means encrypting twice returns
+        the original text.
+      </p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>Ciphy,a Classical Cryptography Tool</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
